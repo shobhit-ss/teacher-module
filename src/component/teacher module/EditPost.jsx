@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Axios from "../../apis/axios"
+import axios from "../../apis/axios"
 
 const EditPost = () => {
     let { id } = useParams();
@@ -14,7 +14,7 @@ const EditPost = () => {
 
     useEffect(() => {
         let fetchPost = async () => {
-            let { data } = await Axios.get(`/posts/${id}`);
+            let { data } = await axios.get(`/posts/${id}`);
             setName(data.name);
             setDetails(data.details);
             setPassword(data.password);
@@ -27,7 +27,7 @@ const EditPost = () => {
         e.preventDefault();
         let payload = { name, details, password };
         try {
-            await Axios.put(`/posts/${id}`, payload);
+            await axios.put(`/posts/${id}`, payload);
             navigate("/");
         } catch (error) {
             console.log(error);

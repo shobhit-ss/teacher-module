@@ -1,0 +1,136 @@
+.home1 {
+  height: 80vh;
+  width: 100%;
+  /* background-color: cadetblue; */
+  background-image: url("https://cdn.pixabay.com/photo/2016/07/28/04/31/math-1547018__340.jpg");
+
+  background-repeat: no-repeat;
+  background-size: 1290px 500px;
+  /* overflow-x: hidden; */
+}
+
+.home1 h2 {
+  text-align: center;
+  position: relative;
+  top: 90px;
+  font-size: larger;
+  color: #1d1160;
+}
+
+.home2 {
+  height: 80vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: black;
+  margin-bottom: 50px;
+  background-image: url("https://cdn.pixabay.com/photo/2019/07/15/14/39/happy-4339527__340.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 26px;
+  margin-left: 3px;
+}
+
+.home2 div {
+  padding: 20px;
+  /* margin-left: 90px; */
+  z-index: 1;
+  position: relative;
+  bottom: 40px;
+  color: #0077c0;
+  cursor: pointer;
+}
+
+.home2 div div:hover {
+  transform: scale(1.2);
+  color: #1d1160;
+}
+
+
+.footer1{
+  height: 30vh;
+  width: 100%;
+  /* background-color: rgba(128, 128, 128, 0.822); */
+  background-color: #72a0c1;
+  border-top:   3px solid rgba(0, 0, 255, 0.435) ;
+  /* position: relative;
+  top: 400px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer2{
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer2 tr{
+  height: 5vh;
+  width: 90%;
+  /* background-color: rgba(240, 255, 255, 0.52);    */
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  
+}
+
+
+.footerTable{
+  height: 5vh;
+  width: 80%;
+   border: none;
+}
+
+
+
+.footerTable a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.652);
+}
+
+
+
+.LoginAs1{
+  height: 59vh;
+  width: 100%;
+  background-color: burlywood;
+  background-image: url("https://cdn.pixabay.com/photo/2016/03/17/23/07/abstract-1264071__340.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.LoginAs2{
+  height: 30vh;
+  width: 30%;
+  /* background-color: #1d1160bc; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+
+}
+
+
+.LoginAs2 button{
+   /* padding: 20px; */
+   /* background-color: rgba(0, 0, 255, 0.604) ; */
+   border: 2px solid grey;
+   height: 29px;
+   width: 40%;
+   position: relative;
+   top: 50px;
+   /* left: 60px; */
+}
+
+
+
+
+

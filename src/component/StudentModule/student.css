@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-.createPost {
+.ScreatePost {
   height: 70vh;
   width: 100%;
   /* background-color: rgba(95, 158, 160, 0.665); */
@@ -19,7 +19,7 @@
   background-position: 260px 1px; */
 }
 
-.createPost1 {
+.ScreatePost1 {
   background-color: rgba(173, 216, 230, 0.757);
   height: 30vh;
   width: 20%;
@@ -27,7 +27,7 @@
   border-radius: 5px;
 }
 
-.createPost1 input {
+.ScreatePost1 input {
   outline: none;
   background-color: transparent;
   border: none;

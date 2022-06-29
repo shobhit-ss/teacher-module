@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Axios from "../../apis/axios";
 import { Link } from "react-router-dom";
-const Posts = () => {
+
+const Sposts = () => {
   let [state, setState] = useState(null);
   let [loading, setLoading] = useState(false);
-
-  let deletePost = async id => {
+  let sdeletepost = async id => {
     await Axios.delete(`/posts/${id}`);
-    window.location.assign("/register");
+    window.location.assign("");
   };
- 
+
   useEffect(() => {
-    window.alert("Sucessfully Registered")
+    windows.alert("you have been sucessfull registered");
     let fetchPosts = async () => {
       try {
         let { data } = await Axios.get("/posts");
@@ -24,13 +24,14 @@ const Posts = () => {
     fetchPosts();
     setLoading(false);
   }, []);
+
   return (
-    <div className="container my-4">
-      <table className="table table-bordered table-hovered">
-        <thead className="thead-dark text-capitalize">
+    <div>
+      <table>
+        <thead>
           <tr>
             <th>Name</th>
-            <th>details</th>
+            <th>course</th>
             <th>Password</th>
             <th>edit</th>
             <th>delete</th>
@@ -46,18 +47,10 @@ const Posts = () => {
                     <td>{post.details}</td>
                     <td>{post.password}</td>
                     <td>
-                      <Link
-                        className="btn btn-primary btn-sm"
-                        to={`/edit-post/${post.id}`}
-                      >
-                        Edit
-                      </Link>
+                      <Link to={`/edit-post/${post.id}`}>Edit</Link>
                     </td>
                     <td>
-                      <button
-                        className="btn btn-danger btn-sm"
-                        onClick={() => deletePost(post.id)}
-                      >
+                      <button onClick={() => deletePost(post.id)}>
                         Delete
                       </button>
                     </td>
@@ -70,4 +63,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default Sposts;

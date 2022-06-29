@@ -1,0 +1,52 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.logoBlock {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center */
+  height: 11vh;
+  width: 100%;
+  /* background-color: floralwhite; */
+  color: #034694;
+  margin-left: 30px;
+}
+.navbarBlock1 {
+  height: 11vh;
+  width: 100%;
+  background-color: #72a0c1;
+  display: flex;
+}
+
+.navbarBlock2 {
+  height: 11vh;
+  width: 100%;
+  display: flex;
+  box-shadow: 3px 3px 3px 3px grey;
+}
+
+.authMenu1 {
+  display: flex;
+  height: 11vh;
+  width: 50%;
+  /* background-color: blueviolet; */
+  justify-content: space-around;
+}
+
+.authMenu2 {
+  display: flex;
+
+  height: 11vh;
+  width: 60%;
+  /* background-color: blueviolet; */
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #034694;
+}

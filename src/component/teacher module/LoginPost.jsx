@@ -1,91 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "../../apis/axios";
 // import { useNavigate } from "react-router-dom";
-import Axios from "../../apis/axios";
 import "./teacher.css";
-import { JSON } from "../../../backend/db.json"
 
-const CreatePost = () => {
-  let [name, setName] = useState("");
-  let [details, setDetails] = useState("");
-  let [password, setPassword] = useState("");
-
-    let [loading] = useState(false);
-     let [state, setState] = useState(JSON);
+const LoginPost = () => {
+  let [value, setValue] = useState([]);
+  let [state, setState] = useState([]);
+  const handleFilter = () => state.filter(val => setValue(val));
   // let navigate = useNavigate();
-
-  let handleSubmit = async e => {
-    e.preventDefault();
+  let fetchUser = async () => {
     try {
-      let payload = { name, details, password };
-      await Axios.post("/posts", payload);
-      // navigate("/");
-    } catch (error) {
-      console.log(error.message);
-    }
+      let { data } = await axios.get("http://localhost:5000/posts");
+      setState(data);
+    } catch (error) {}
   };
+  useEffect(() => {
+    try {
+      fetchUser();
+      handleFilter();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+  let auth = e => {
+    e.preventDefault();
+    value.map(x => {
+      let { name, details, password } = x;
+      for (let i = 0; i < x.length; i++) {
+        if (Name === name && Password == password) {
+          console.log("success");
+        }
+      }
+    });
+  };
+  let [Name, setName] = useState();
+  let [Password, setPassword] = useState();
   return (
-    <section className="createPost">
-      <article className="createPost1">
-        <h3>Login As a Teacher</h3>
-        <form onSubmit={handleSubmit}>
-          <table>
-            <tr>
-              <td>
-                <label htmlFor="name">Name</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label htmlFor="details">Role</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="details"
-                  value={details}
-                  onChange={e => setDetails(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label htmlFor="password">password</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="password"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <button className="btn">
-                  {loading === true ? "loading" : "Login"}
-                </button>
-              </td>
-            </tr>
-          </table>
-        </form>
-      </article>
-    </section>
+    <form onSubmit={auth}>
+      <div>
+        <input
+          type="text"
+          value={Name}
+          onChange={e => setName(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          value={Password}
+          onChange={e => setPassword(e.target.value)}
+        />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   );
 };
 
-export default CreatePost;
+export default LoginPost;

@@ -2,8 +2,14 @@ import React from 'react'
 
 const TeacherPage = () => {
   return (
-    <div>TeacherPage</div>
+    <section>
+      <main>
+        <article>
+     
+        </article>
+      </main>
+    </section>
   )
 }
 
-export default TeacherPage
+export default TeacherPage;
